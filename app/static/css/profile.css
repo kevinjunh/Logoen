@@ -1,0 +1,49 @@
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 1.6rem;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 1rem;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .info {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .info th,
+  .info td {
+    padding: 0.1rem 1rem;
+    border: 1px solid #dee2e6;
+  }
+  
+  .info th {
+    font-weight: bold;
+    text-align: left;
+  }
+  
+  .edit {
+    text-align: center;
+    margin: 20px auto 0 auto;
+  }
+  
+  .edit a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 0.5rem;
+  }
+  
+  .edit a:hover {
+    background-color: #0069d9;
+  }

@@ -1,0 +1,18 @@
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/thanks.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="message">
+    <h1>Transaction Successful!</h1>
+    <p>Thank you! We send you an email with logo where you can download.</p>
+    <div class="buttons">
+        <a class="shop" href="/">Continue shopping</a>
+    </div>
+</div>
+
+{% endblock %}

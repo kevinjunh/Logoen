@@ -1,0 +1,57 @@
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/product.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="details">
+    <div class="prod-image">
+        <img src="{{ object.image.url }}" >
+    </div>
+
+    <div class="prod-info">
+        <div class="prod">
+            <h2>{{ object.title }}</h2>
+            <hr>
+            <ul>
+                {% for category in categories %}
+                    <li>{{ category.name }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="price">
+            <div class="price-val">
+                <p>R$300.00</p>
+                <span class="valor">R${{ object.price }}</span>
+            </div>
+            <div class="cart-fav">
+                <a class="cart" href="{% url 'additem' object.slug %}">Add to cart</a>
+                <a class="favorite" href="{% url 'favorite' object.slug %}">
+                    <img src="{% static 'img/heart.svg' %}" alt="favorited">
+                </a>
+            </div>
+        </div>
+
+        <div class="payment">
+            <p>Payment methods: </p>
+            <img src="{% static 'img/visa.png' %}" alt="visa">
+            <img src="{% static 'img/card.png' %}" alt="mastercard">
+            <img src="{% static 'img/amex.png' %}" alt="amex">
+            <img src="{% static 'img/discover.png' %}" alt="discover">
+            <img src="{% static 'img/diners-club.png' %}" alt="diners">
+            <img src="{% static 'img/jcb.png' %}" alt="jcb">
+            <img src="{% static 'img/unionpay.png' %}" alt="unionpay">
+        </div>
+
+        <div class="description">
+            <h3>Description:</h3>
+            <p>{{ object.description|linebreaksbr }}</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

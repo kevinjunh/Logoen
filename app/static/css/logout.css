@@ -1,0 +1,27 @@
+.logout {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.logout p {
+    font-size: 18px;
+    color: #333;
+}
+
+.form {
+    margin-top: 20px;
+}
+
+button {
+    background-color: #007bff; 
+    color: white; 
+    padding: 10px 15px; 
+    border: none; 
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 2rem;
+}
+
+button:hover {
+    background-color: #0069d9; 
+}

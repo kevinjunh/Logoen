@@ -1,0 +1,115 @@
+.details {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    margin-top: 20px;
+}
+
+
+.prod-image {
+    margin-right: 20px;
+}
+
+.prod-image img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #838383;
+}
+
+.prod-info {
+    max-width: 50%;
+    text-align: left;
+}
+
+.prod-info h3 {
+    font-weight: bold;
+}
+
+.prod h2 {
+    font-size: 2rem;
+}
+
+.prod ul {
+    display: flex;
+    margin-top: 0.5rem;
+}
+
+.prod ul li {
+    margin-right: 8px;
+    background-color: #ececec;
+    border: 1px solid #555;
+    border-radius: 15px;
+    padding: 2px 10px;
+    opacity: 80%;
+}
+
+.price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.price-val p {
+    text-decoration: line-through;
+    opacity: 50%;
+    margin-left: 5px;
+}
+
+.price .valor {
+    color: #e44d26;
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+
+.price .cart,
+.price .favorite {
+    display: inline-block;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.price .cart {
+    background-color: #007bff;
+    text-decoration: none;
+    color: #fff;
+    transition: 0.3s ease;
+    margin-left: 20px;
+}
+
+.price .cart:hover {
+    background-color: #0056b3;
+}
+
+
+.price .favorite img {
+    width: 20px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.payment {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.payment img {
+    max-width: 7%;
+    height: auto;
+    margin-right: 0.5rem;
+}
+
+.description {
+    margin-top: 2.5rem;
+}
+
+.description p {
+    font-size: 1rem;
+    line-height: 1.6rem;
+    color: #555;
+    margin-top: 1rem;
+}

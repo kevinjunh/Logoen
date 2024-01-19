@@ -1,0 +1,19 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/logout.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="logout">
+    <p>Are you Logout?</p>
+    <form method="post" class="form">
+        {% csrf_token %}
+        <button type="submit">Logout</button>
+    </form>
+</div>
+
+{% endblock %}

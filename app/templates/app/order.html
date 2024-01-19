@@ -1,0 +1,55 @@
+{% extends "app/base.html" %}
+
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/order.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="title">
+    <h3>Shopping cart</h3>
+</div>
+
+<div class="cart">
+    <div class="orders">
+        {% for order_item in order.items.all %}
+            <div class="order-item">
+                <div class="image">
+                    <img src="{{ order_item.item.image.url }}" alt="{{ order_item.item.title }}">
+                </div>
+                <div class="item-info">
+                    <div class="item">
+                        <a href="{% url 'product' order_item.item.slug %}">
+                            <h3>{{ order_item.item.title }}</h3>
+                        </a>
+                        <a href="{% url 'removeitem' order_item.item.slug %}">
+                            <span class="remove">削除</span>
+                        </a>
+                    </div>
+                    <div class="price">
+                        <span class="item-price">R${{ order_item.item.price }}</span>
+                    </div>
+                </div>
+            </div>
+            {% if not forloop.last %}
+                <hr>
+            {% endif %}
+
+            {% empty %}
+            <p class="empty">Cart is empty</p>
+        {% endfor %}
+    </div>
+
+    <div class="payment">
+        {% if order.get_total %}
+            <p>Total: R$<span class="total">{{ order.get_total }}</span></p>
+            <div class="pay">
+                <a class="button" href="{% url 'payment' %}">Go to payment</a>
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

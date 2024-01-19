@@ -1,0 +1,81 @@
+{% load cart_tags %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% block style %}
+    {% endblock %}
+    <title>LOGOEN</title>
+</head>
+
+<body>
+    <nav>
+        <div class="header">
+            <a class="brand" href="/">LOGOEN</a>
+            <ul>
+                {% if user.is_authenticated %}
+                    <li>
+                        <a href="{% url 'profile' %}">
+                            <img src="{% static 'img/person-fill.svg' %}" alt="profile">
+                            <div class="path">Profile</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'favorited' %}">
+                            <img src="{% static 'img/heart.svg' %}" alt="favorite">
+                            <div class="path">Favorite</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'order' %}">
+                            <img src="{% static 'img/cart4.svg' %}" alt="cart">
+                            <div class="path">Cart</div>
+                            <span class="badge">
+                                {{ request.user|itemCount }}
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'account_logout' %}">
+                            <img src="{% static 'img/box-arrow-in-right.svg' %}" alt="logout">
+                            <div class="path">Logout</div>
+                        </a>
+                    </li>
+                {% else %}
+                    <li>
+                        <a href="{% url 'account_signup' %}">
+                            <img src="{% static 'img/person-fill.svg' %}" alt="signup">
+                            <div class="path">Signup</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'account_login' %}">
+                            <img src="{% static 'img/box-arrow-in-right.svg' %}" alt="login">
+                            <div class="path">Login</div>
+                        </a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="content">
+            {% block content %}
+            {% endblock %}
+        </div>   
+    </main>
+
+    <footer class="footer">
+        <p>Copyright &copy; Logoen 2024</p>
+    </footer>
+
+    {% block extra_js %}
+    {% endblock %}
+</body>
+
+</html>

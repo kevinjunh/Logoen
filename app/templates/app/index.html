@@ -1,0 +1,35 @@
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="main">
+    <div class="intro">
+        <h1>Find your logo at Logoen!</h1>
+        <p>Take your business, side job, or creation to the next level with professional-looking logos.</p>
+        <form class='search' action="{% url 'index' %}">
+            {{ form.as_p }}
+            <button type="submit">Search</button>
+        </form>
+    </div>
+    <div id="search-results">
+        {% for item in items %}
+            <div class="logo">
+                <a href="{% url 'product' item.slug %}">
+                    <img src="{{ item.image.url }}">
+                    <div class="">
+                        <p>{{ item.category }}</p>
+                        <h5>{{ item.title }}</h5>
+                        <h4 class="logo-price">R${{ item.price }}</h4>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

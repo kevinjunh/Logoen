@@ -1,0 +1,33 @@
+.message {
+    text-align: center;
+}
+
+.message h1 {
+    padding: 1rem 0;
+    font-size: 1.5rem;
+}
+
+.message p {
+    margin: 1rem auto;
+}
+
+.buttons {
+    margin: 40px auto;
+}
+
+.buttons a {
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.shop {
+    background-color: #fff;
+    color: #007bff;
+    border: 1px solid #007bff;
+}
+
+.shop:hover {
+    background-color: rgb(181, 173, 253);
+  }

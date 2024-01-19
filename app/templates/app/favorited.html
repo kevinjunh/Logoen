@@ -1,0 +1,42 @@
+{% extends "app/base.html" %}
+
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/favorited.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="title">
+    <h3>Favorited</h3>
+</div>
+
+<div class="favorite">
+    {% for favorite_item in favorites %}
+        <div class="fav">
+            <div class="image">
+                <img src="{{ favorite_item.item.image.url }}" alt="{{ favorite_item.item.title }}">
+            </div>
+            <div class="item-info">
+                <div class="info">
+                    <a href="{% url 'product' favorite_item.item.slug %}">
+                        <h5>{{ favorite_item.item.title }}</h5>
+                    </a>
+                    <a href="{% url 'favorite' favorite_item.item.slug %}">
+                        <span class="unfav">Unfavorite</span>
+                    </a>
+                </div>
+                <div class="buy">
+                    <span class="price">R${{ favorite_item.item.price }}</span>
+                    <a class="cart" href="{% url 'additem' favorite_item.item.slug %}">Add to cart</a>
+                </div>
+            </div>
+        </div>
+        {% if not forloop.last %}
+            <hr>
+        {% endif %}
+    {% endfor %}
+</div>
+
+{% endblock %}

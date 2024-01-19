@@ -1,0 +1,49 @@
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/payment.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="title">
+    <h3>Confirm order</h3>
+</div>
+
+<form action="." method="POST" id="payment-form">
+    <div class="order">
+        <div class="user-pay">
+            <div class="user-info">
+                <p class="sec-title">User information</p>
+                <p>Name: {{ user_data.first_name }} {{ user_data.last_name }}</p>
+                <p>Email: {{user_data.email }}</p>
+                <p>Telephone: {{ user_data.tel }}</p>
+            </div>
+            <div class="payment">
+                <p class="sec-title">Payment Method</p>
+                {% csrf_token %}
+                <div class="Card">
+                    <div id="card-element"></div>
+                    <div id="card-errors" role="alert"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="valor">
+            <p class="sec-title">Order</p>
+            <p>Total: R${{ order.get_total }}</p>
+            <p>Frete: R$0</p>
+            <hr>
+            <p class="">Total: R${{ order.get_total }}</p>
+            <div class="button">
+                <button class="btn" type="submit">Confirm</button>
+            </div>
+        </div>
+    </div>
+</form>
+{% endblock %}
+
+{% block extra_js %}
+<script type="text/javascript" src="https://js.stripe.com/v3/"></script>
+<script type="text/javascript" src="{% static 'js/stripe.js' %}"></script>
+{% endblock %}

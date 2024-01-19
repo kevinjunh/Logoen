@@ -1,0 +1,57 @@
+.signup {
+    max-width: 400px;
+    margin: 0 auto 3rem auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.signup h5 {
+    text-align: center;
+    color: #333;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.form {
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.form .name {
+    display: flex;
+}
+
+.error {
+    color: #e74c3c;
+    margin-bottom: 15px;
+    font-size: 0.8rem;
+}
+
+.confirm {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.btn {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+}
