@@ -30,12 +30,12 @@
     text-align: left;
   }
   
-  .edit {
+  .edit, .btn {
     text-align: center;
     margin: 20px auto 0 auto;
   }
   
-  .edit a {
+  .edit a, .btn .save {
     display: inline-block;
     padding: 0.5rem 1rem;
     background-color: #007bff;
@@ -44,6 +44,6 @@
     border-radius: 0.5rem;
   }
   
-  .edit a:hover {
+  .edit a:hover, .btn .save:hover {
     background-color: #0069d9;
   }
