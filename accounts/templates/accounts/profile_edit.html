@@ -1,35 +1,39 @@
 {% extends 'app/base.html' %}
 {% load widget_tweaks %}
 
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+{% endblock %}
+
 {% block content %}
 
-<div class="card card-profile my-5 mx-auto">
-    <div class="card-body">
-        <h5 class="card-title text-center">Profile</h5>
-        <form action="{% url 'profile_edit' %}" method="post">
-            {% csrf_token %}
-            <table class="profile_table mb-4">
-                <tbody>
-                    <tr>
-                        <th class="header">Name</th>
-                        <td class="data form_wrap form_wrap-2">
-                            {% render_field form.first_name class='form-control' placeholder='性' %}
-                            {% render_field form.last_name class='form-control' placeholder='名' %}
-                        </td>
-                    </tr>
-                    <tr>
-                        <th class="header">Telephone</th>
-                        <td class="data">
-                            {% render_field form.tel class='form-control' placeholder='Telephone' %}
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="button mx-auto">
-                <button class="btn btn-lg btn-warning btn block">Cadastrar</button>
-            </div>
-        </form>
-    </div>
+<div class="container">
+    <h5 class="title">Profile</h5>
+    <form action="{% url 'profile_edit' %}" method="post">
+        {% csrf_token %}
+        <table class="info">
+            <tbody>
+                <tr>
+                    <th class="header">Name</th>
+                    <td class="data">
+                        {% render_field form.first_name class='form-control' placeholder='性' %}
+                        {% render_field form.last_name class='form-control' placeholder='名' %}
+                    </td>
+                </tr>
+                <tr>
+                    <th class="header">Telephone</th>
+                    <td class="data">
+                        {% render_field form.tel class='form-control' placeholder='Telephone' %}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="btn">
+            <button class="save">Save</button>
+        </div>
+    </form>
 </div>
 
 {% endblock %}
