@@ -1,4 +1,5 @@
 Django Logo Shop
+
 Overview
 This repository contains the source code for a logo selling website built using Django, a high-level web framework for Python. The website allows users to browse, purchase, and manage logo products. This README provides instructions on setting up and running the project.
 
